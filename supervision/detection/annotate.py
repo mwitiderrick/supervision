@@ -104,7 +104,8 @@ class BoxAnnotator:
             )
             if trace_lines:
                 radius = 6
-                cv2.circle(scene, (x2 // 2, y2 // 2), radius, color.as_rgb(), -1)
+                # cv2.circle(scene, (x2 // 2, y2 // 2), radius, color.as_rgb(), -1)
+                cv2.circle(scene, (x2, y2), radius, color.as_rgb(), -1)
                  
             if skip_label:
                 continue
