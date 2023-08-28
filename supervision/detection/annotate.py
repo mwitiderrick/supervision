@@ -136,6 +136,7 @@ class BoxAnnotator:
             )
             if trace_lines:
                 radius = 6
+                color = (255, 133, 233)
                 cv2.circle(scene, (x2 // 2, y2 // 2), radius, color, -1)
                 
             cv2.putText(
