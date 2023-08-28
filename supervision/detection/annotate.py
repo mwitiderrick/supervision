@@ -102,6 +102,10 @@ class BoxAnnotator:
                 color=color.as_bgr(),
                 thickness=self.thickness,
             )
+             if trace_lines:
+                radius = 6
+                cv2.circle(scene, (x2 // 2, y2 // 2), radius, as_rgb(), -1)
+                 
             if skip_label:
                 continue
 
@@ -134,10 +138,7 @@ class BoxAnnotator:
                 color=color.as_bgr(),
                 thickness=cv2.FILLED,
             )
-            if trace_lines:
-                radius = 6
-                color = (255, 133, 233)
-                cv2.circle(scene, (x2 // 2, y2 // 2), radius, color, -1)
+           
                 
             cv2.putText(
                 img=scene,
