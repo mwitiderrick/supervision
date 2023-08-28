@@ -102,7 +102,7 @@ class BoxAnnotator:
                 color=color.as_bgr(),
                 thickness=self.thickness,
             )
-             if trace_lines:
+            if trace_lines:
                 radius = 6
                 cv2.circle(scene, (x2 // 2, y2 // 2), radius, as_rgb(), -1)
                  
