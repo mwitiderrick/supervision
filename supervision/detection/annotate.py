@@ -46,6 +46,7 @@ class BoxAnnotator:
         detections: Detections,
         labels: Optional[List[str]] = None,
         skip_label: bool = False,
+        trace_lines: bool = False
     ) -> np.ndarray:
         """
         Draws bounding boxes on the frame using the detections provided.
@@ -133,6 +134,11 @@ class BoxAnnotator:
                 color=color.as_bgr(),
                 thickness=cv2.FILLED,
             )
+            if trace_lines:
+                radius = 10
+                color = (255, 133, 233)
+                cv2.circle(scene, (text_background_x2 // 2, text_background_y2 // 2), radius, color, -1)
+                
             cv2.putText(
                 img=scene,
                 text=text,
